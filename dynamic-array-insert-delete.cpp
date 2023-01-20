@@ -71,6 +71,33 @@ public:
         array[index] = value;
         size++;
     }
+    void Popback()
+    {
+        if (size != 0)
+        {
+            size--;
+        }
+        else
+        {
+            cout << "Current size is 0\n";
+        }
+    }
+    void Erase(int position)
+    {
+        if (position >= size)
+        {
+            cout << "Position doesn't exist\n";
+            return;
+        }
+        else
+        {
+            for (int i = position + 1; i < size; i++)
+            {
+                array[i - 1] = array[i];
+            }
+            size--;
+        }
+    }
 };
 int main()
 {
